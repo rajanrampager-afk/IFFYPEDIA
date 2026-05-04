@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Iffypedia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Nunito',sans-serif;
+background:#0F0A1E;
+color:#fff;
+}
+
+.header{
+text-align:center;
+padding:20px 10px;
+}
+
+.logo{
+font-family:'Fredoka One';
+font-size:28px;
+background:linear-gradient(45deg,#4D96FF,#FF6FC8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav{
+display:flex;
+overflow-x:auto;
+gap:8px;
+padding:10px;
+}
+
+.nav button{
+flex:1;
+min-width:120px;
+padding:10px;
+border:none;
+border-radius:20px;
+background:#1E1540;
+color:#aaa;
+font-weight:bold;
+}
+
+.nav button.active{
+background:#4D96FF;
+color:#fff;
+}
+
+.panel{
+display:none;
+padding:15px;
+}
+
+.panel.active{
+display:block;
+}
+
+.card{
+background:#1A1030;
+padding:15px;
+border-radius:12px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#4D96FF;
+color:#fff;
+font-weight:bold;
+}
+
+/* mobile spacing */
+@media (max-width:480px){
+.logo{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div class="logo">✨ Iffypedia</div>
+<div style="font-size:12px;color:#aaa">Questionable wisdom 😂</div>
+</div>
+
+<div class="nav">
+<button class="active" onclick="show('quiz',this)">🧠 Quiz</button>
+<button onclick="show('past',this)">🔮 Past</button>
+<button onclick="show('job',this)">💼 Job</button>
+<button onclick="show('horo',this)">⭐ Horo</button>
+</div>
+
+<div id="quiz" class="panel active">
+<div class="card">
+<h3>Quick Quiz</h3>
+<p>What is 5 × 5?</p>
+<button onclick="alert('Correct 😂')">25</button>
+<button onclick="alert('Nope 😂')">20</button>
+</div>
+</div>
+
+<div id="past" class="panel">
+<div class="card">
+<h3>Past Life</h3>
+<p>You were probably a warrior ⚔️</p>
+</div>
+</div>
+
+<div id="job" class="panel">
+<div class="card">
+<h3>Career Match</h3>
+<p>You are a future CEO 😎</p>
+</div>
+</div>
+
+<div id="horo" class="panel">
+<div class="card">
+<h3>Horoscope</h3>
+<p>Today you will eat something tasty 🍕</p>
+</div>
+</div>
+
+<script>
+function show(id,btn){
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
